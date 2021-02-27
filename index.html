@@ -1,0 +1,351 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>娱乐小站</title>
+<script src="js/vue.js"></script>
+<link href="style1.css" rel="stylesheet" type="text/css">
+<link rel="icon" href="images/tx1.png" type="image/x-icon">
+</head>
+
+<body>
+<div class="abk">
+<div class="atop">
+	<img class="flot pointer" src="images/tx1.png">
+		<ul>
+		<li id="app">
+		<a v-bind:href="geturl" class="zssi">{{getname}}</a>
+		</li>
+		<li>消息</li>
+		<li>动态</li>
+		<li>收藏</li>
+		<li>历史</li>
+		<li>
+         <form id="app3">
+		 <input type="text" class="ssk" v-bind:type="t" v-bind:value="txt" v-on:click="chage">
+		  <input type="text" class="ssk">
+		  <input type="image" src="images/sosuo.png" class="ssb" v-on:click="count+=1">
+		  <p>您点击了:{{count}}次</p>
+	     </form>	
+        </li>
+		</ul>
+</div>
+</div>
+
+<div class="zhuti">
+	<div class="zhuti1" id="app1">
+		<ul>
+			<li>
+			<a v-bind:href="geturl">{{getname1}}</a>
+			</li>
+			<li>动画
+			 <ol>
+			 	<li>MAD</li>
+			 	<li>MMD</li>
+			 	<li>短片·手书</li>
+			 </ol>
+			</li>
+			<li>番剧
+			 <ol>
+			 	<li>资讯</li>
+			 	<li>官方延伸</li>
+			 	<li>新番时间表</li>
+			 </ol>
+			</li>
+			<li>国创
+			 <ol>
+			 	<li>国产动画</li>
+			 	<li>资讯</li>
+			 	<li>新番时间表</li>
+			 </ol>
+			</li>
+			<li>音乐
+			 <ol>
+			 	<li>原创音乐</li>
+			 	<li>翻唱</li>
+			 	<li>MV</li>
+			 </ol>
+			</li>
+			<li>舞蹈
+			 <ol>
+			 	<li>宅舞</li>
+			 	<li>三次元舞蹈</li>
+			 	<li>舞蹈教程</li>
+			 </ol>
+			</li>
+			<li>游戏
+			 <ol>
+			 	<li>单机游戏</li>
+			 	<li>电子竞技</li>
+			 	<li>手机游戏</li>
+			 </ol>
+			</li>
+		</ul>
+	</div>
+
+
+<div class="sytp tg2">
+   <div><img src="images/pht1.png"><span class="tuiguang">关于你</span></div>
+<div class="clear"></div>
+	<div class="syt1">
+	<img class="pointer" src="images/st1.jpg">
+	</div>
+	<div class="sytf">
+		<div class=" syt2">
+        <div class="syt3"></div>
+        <div  id="app2">
+			<ul class="uljs1">
+			<p>性别[ {{t}} ]</p>
+			</ul>
+			<ul class="uljs1">
+        	<p>兴趣爱好: {{aihao.join('|')}}</p>
+			</ul>
+			<ul class="uljs1">
+			<p>你在[ {{spro}} ]省[ {{scity}} ]市/区</p>
+			</ul>
+        	<ul class="uljs">
+        	<input type="radio" value='男'  v-model="t" />男
+        	<input type="radio" value='女'  v-model="t" />女	
+			</ul>
+			<ul class="uljs">
+        	<input type="checkbox" value="影视" v-model="aihao"/>影视
+        	<input type="checkbox" value="动漫" v-model="aihao"/>动漫
+        	<input type="checkbox" value="游戏" v-model="aihao"/>游戏
+			<input type="checkbox" value="音乐" v-model="aihao"/>音乐
+			</ul>
+			<ul class="uljs">
+			省：<select  v-on:change="show(spro)"  v-model="spro">
+					<option  v-for=" i in  pro">
+						{{i}}
+					</option>
+				</select>
+			市/区：
+				<select  v-model="scity">
+					<option  v-for=" j in city">
+						{{j}}	
+					</option>
+				</select>
+			</ul>
+			</div>
+        </div>
+	</div>
+<div class="clear"></div>
+<img src="images/bg1.jpg">
+</div>
+
+<div class="tg3">
+    <div><img src="images/rdt1.png"><span class="tuiguang">画册</span></div>
+<div class="lb">
+	<ul>
+		<li><img class="xiao" src="images/1x.jpg"><div class="fspic"><img src="images/1d.jpg"></div></li>
+		<li><img class="xiao" src="images/2x.jpg"><div><img src="images/2d.jpg"></div></li>
+		<li><img class="xiao" src="images/3x.jpg"><div><img src="images/3d.jpg"></div></li>
+		<li><img class="xiao" src="images/4x.jpg"><div><img src="images/4d.jpg"></div></li>
+	</ul>
+</div>
+</div>
+
+<div class="tg3">
+    <div><img src="images/hc1.png"><span class="tuiguang">新闻</span></div>
+    <div class="clear"></div>
+	<div class="ph1">
+		<ul>
+			<li class="ph12">动画新闻</li>
+			<li><span>1</span> <a href="index2.html" target="_blank">2019头号神片出炉！连续三集……</a></li>
+			<li><span>2</span> <a href="index2.html" target="_blank">博士为了赚钱不惜带着干员们……</a></li>
+			<li><span>3</span> <a href="index2.html" target="_blank">辉夜大小姐想要变得可爱！！……</a></li>
+			<li><span>4</span> <a href="index2.html" target="_blank">七月新番看点啥？只要长的……</a></li>
+			<li><span>5</span> <a href="index2.html" target="_blank">各个地区的配音风格对比！……</a></li>
+			<li><span>6</span> <a href="index2.html" target="_blank">前方高能不如前方寒冬！……</a></li>
+			<li><span>7</span> <a href="index2.html" target="_blank">她是来自天堂的魔鬼！……</a></li>
+		</ul>
+	</div>
+	<div class="ph1">
+		<ul>
+			<li class="ph12">国漫新闻</li>
+			<li><span>1</span> <a href="index2.html" target="_blank">曾被喷到全网下架整改，四……</a></li>
+			<li><span>2</span> <a href="index2.html" target="_blank">《小白狼之梦狼族篇》登场人物……</a></li>
+			<li><span>3</span> <a href="index2.html" target="_blank">什么兄弟情？这明明是爱情！……</a></li>
+			<li><span>4</span> <a href="index2.html" target="_blank">我竟被小孩子疯狂撒狗粮？……</a></li>
+			<li><span>5</span> <a href="index2.html" target="_blank">国产神作预警！男主被迫……</a></li>
+			<li><span>6</span> <a href="index2.html" target="_blank">国产第一烂尾漫竟然是你！……</a></li>
+			<li><span>7</span> <a href="index2.html" target="_blank">风云3第28期 再显锋芒……</a></li>
+		</ul>
+	</div>
+	<div class="ph1">
+		<ul>
+			<li class="ph12">音乐新闻</li>
+			<li><span>1</span> <a href="index2.html" target="_blank">Attack！【洛天依/言和……</a></li>
+			<li><span>2</span> <a href="index2.html" target="_blank">柠檬精之歌 ❤浓酸！明明是……</a></li>
+			<li><span>3</span> <a href="index2.html" target="_blank">忍びのすゝめ / まふまふ……</a></li>
+			<li><span>4</span> <a href="index2.html" target="_blank">恐高症 (史上最菜言和登……</a></li>
+			<li><span>5</span> <a href="index2.html" target="_blank">猛毒／ベノム【翻唱】……</a></li>
+			<li><span>6</span> <a href="index2.html" target="_blank">离骚·开篇『帝高阳之……</a></li>
+			<li><span>7</span> <a href="index2.html" target="_blank">海之幽灵 / 米津玄師……</a></li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+<img src="images/bg1.jpg">
+</div>
+
+<div class="tg1">
+	<div><img src="images/tg1.png"><span class="tuiguang">推广</span></div>
+	<div class="tgtq">
+		<ul>
+			<li><img src="images/tgt1.jpg" class="radius pointer"></li>
+			<li><img src="images/tgt2.jpg" class="radius pointer"></li>
+			<li><img src="images/tgt3.jpg" class="radius pointer"></li>
+			<li><img src="images/tgt4.jpg" class="radius pointer"></li>
+			<li><img src="images/tgt5.jpg" class="radius pointer"></li>
+		</ul>
+		<img src="images/bg1.jpg">
+	</div>
+</div>
+
+</div>
+
+<div class="jw">
+	<div class="jw1"></div>
+	<div class="jw1">
+		<ul>
+			<li>关于我们</li>
+			<li>联系我们</li>
+			<li>加入我们</li>
+			<li>友情链接</li>
+			<li>官网认证</li>
+			<li>投资关系</li>
+		</ul>
+	</div>
+	<div class="jw1">
+		<ul>
+			<li>帮助中心</li>
+			<li>高级弹幕</li>
+			<li>活动专题</li>
+			<li>侵权申诉</li>
+			<li>活动中心</li>
+			<li>壁纸站点</li>
+		</ul>
+	</div>
+	<div class="jw1">
+	    <ol>
+	    	<li><img src="images/dl.png"><div>客户端下载</div></li>
+			<li><img src="images/wb.png"><div>新浪微博</div></li>
+            <li><img src="images/wx.png"><div>官方微信</div></li>
+	    </ol>
+	</div>
+	<div class="jw1"></div>
+</div>
+<script>
+			vm=new Vue(
+			{
+					el:"#app",
+					data:{
+						name:"主站",
+						url:"index1.html"
+					},
+					computed:{
+						getname:{
+							get:function(){
+								return this.name;
+							},
+							set:function(newname){
+								this.name=newname;
+							}
+						},
+						geturl:{
+							get:function(){
+								return this.url;
+							},
+							set:function(newurl){
+								this.url=newurl;
+							}
+						}
+					}
+			})
+</script>
+<script>
+			vm=new Vue(
+			{
+					el:"#app1",
+					data:{
+						name1:"首页",
+						url:"index1.html"
+					},
+					computed:{
+						getname1:{
+							get:function(){
+								return this.name1;
+							},
+							set:function(newname1){
+								this.name1=newname1;
+							}
+						},
+						geturl:{
+							get:function(){
+								return this.url;
+							},
+							set:function(newurl){
+								this.url=newurl;
+							}
+						}
+					}
+			})
+</script>
+<script>
+			var vm=new Vue({
+				el:"#app2",
+				data:{t:'',
+					aihao:[],
+					spro:'福建',
+					scity:'泉州',
+					pro:['福建','河南','河北','江西'],
+					city:['泉州'],
+					city1:['福州','厦门','泉州','漳州'],
+					city2:['郑州','开封','洛阳','南阳'],
+					city3:['邯郸','唐山','武安','保定'],
+					city4:['南昌','九江','赣州','萍乡']
+					},
+					methods:{
+						show:function(i)
+						{
+						  if(i=="福建")
+						  this.city=this.city1;
+						  if(i=="河南")
+						  this.city=this.city2;
+						  if(i=="河北")
+						  this.city=this.city3;
+					      if(i=="江西")
+					      this.city=this.city4; 
+						}
+
+					}
+			})
+</script>
+<script>
+			var vm=new Vue(
+			{
+			  el:"#app3",
+			   data:{count:0,
+			   t:"button",
+			   txt:"搜索 "
+			   },
+			   methods:{
+			   					 chage:function( )
+			   					 {
+			   						 if(this.t=="button")
+			   						   {this.t="text";
+			   						    this.txt="输入关键词";
+			   						   }
+			   						   
+			   						   else
+			   							   {this.t="button";
+			   							    this.txt="搜索";
+			   							   }
+			   					 }
+			   }
+			}
+			)
+			
+</script>
+</body>
+</html>
